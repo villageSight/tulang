@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane ng-controller = 'scorllController'>
+      <ion-header-bar align-title='center' class="bar-positive">
+        <div class="buttons">
+        <!-- buttons  按钮组  align-title设置title标题的位置-->
+         <!--  <button class="button button-icon ion-ios-minus-outline" ng-click='showDelete = !showDelete'></button> -->
+         <button class="button button-icon ion-ios-minus-outline" ng-click='showDeleteButtons()'></button>
+        </div>
+        <h1 class="title">首页</h1>
+        <div class="buttons">
+            <button class="button button-icon ion-drag" ng-click='showReorder = !showReorder'></button>
+        </div>
+      </ion-header-bar>
+
+      <!-- 手动添加滚动视图区域大小，内容区域设置宽度-->
+        <ion-content 
+        class='padding has-footer'
+        delegate-handle='mainScroll'
+        >
+            <ion-scroll
+            
+            style='width: 100%;height: 200px;'
+            on-scroll = 'getPos()'
+            zooming = 'true'
+            delegate-handle='smallScroll'
+            >
+            <ul class="list list-inset">
+                <li class="item" ng-click='scrollBottom()'>回到底部</li>
+                <li class="item">item02</li>
+                <li class="item" ng-click='freezeScroll()'>冻结滚动</li>
+                <li class="item">item04</li>
+                <li class="item">item05</li>
+                <li class="item" ng-click='scrollTo(0,200)'>滑动到(0,100)</li>
+                <li class="item">item07</li>
+                <li class="item" ng-click='zoomTo(2)'>缩放至2倍</li>
+                <li class="item" ng-click='zoomTo(.5)'>缩放至.5倍</li>
+                <li class="item" ng-click='zoomToOrigin()'>缩放还原</li>
+                <li class="item">item11</li>
+                <li class="item">item12</li>
+                <li class="item">item13</li>
+                <li class="item">item14</li>
+                <li class="item">item15</li>
+                <li class="item">item16</li>
+                <li class="item"  ng-click='scrollBy(0,50)'>由当前滑动(0,50)</li>
+                <li class="item">item18</li>
+                <li class="item">item19</li>
+                <li class="item">item20</li>
+                <li class="item">item21</li>
+                <li class="item">item22</li>
+                <li class="item">item23</li>
+                <li class="item">item24</li>
+                <li class="item">item25</li>
+                <li class="item">item26</li>
+                <li class="item">item27</li>
+                <li class="item">item28</li>
+                <li class="item">item29</li>
+                <li class="item" ng-click='scrollTop()'>返回顶部</li>
+            </ul>
+            <button class="button button-block button-stable" ng-click='scrollToSmallTop()'>回到scroll顶部</button>
+            </ion-scroll>
+            <ul class="list">
+                <li class="item">content item01</li>
+                <li class="item">content item02</li>
+                <li class="item">content item03</li>
+                <li class="item">content item04</li>
+                <li class="item">content item05</li>
+                <li class="item">content item06</li>
+                <li class="item">content item07</li>
+                <li class="item">content item08</li>
+                <li class="item">content item09</li>
+                <li class="item">content item10</li>
+                <li class="item">content item11</li>
+                <li class="item">content item12</li>
+                <li class="item">content item13</li>
+                <li class="item">content item14</li>
+                <li class="item">content item15</li>
+                <li class="item">content item16</li>
+                <li class="item">content item17</li>
+                <li class="item">content item18</li>
+                <li class="item">content item19</li>
+                <li class="item">content item20</li>
+            </ul>
+            <button class="button button-block button-positive" ng-click='scrollToMainTop()'>回到content顶部</button>
+        </ion-content>
+
+      <ion-footer-bar class='bar-stable item-icon-left item-icon-right' align-title='center'>
+        <i class="icon ion-navicon"></i>
+         <h2 class="title">关于我们</h2>
+         <button class="button button-icon ion-heart button-clear"> </button>
+      </ion-footer-bar>
+    </ion-pane>
+  </body>
+</html>

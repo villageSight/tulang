@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app-popover1.js"></script>
+
+  </head>
+  <body ng-app="starter" ng-controller='popoverController'>
+        <script id='popover1.html' type="text/ng-template">
+            <ion-popover-view>
+                <ion-header-bar class="bar-positive">
+                    <h2 class="title">popover标题 script</h2>
+                </ion-header-bar>
+
+                <ion-content class="padding">
+                <label for="">
+                    <input type="text" ng-model="yourname">
+                </label>
+                script标签模板
+                <button class="button button-calm button-block"
+                ng-click = 'closePopover()'
+                >关闭</button>
+                </ion-content>
+            </ion-popover-view>
+        </script>
+
+        <ion-pane>
+            <button class="button button-stable button-block"
+            ng-click = 'openPopover($event)'
+            >打开Popover</button>
+        </ion-pane>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!-- <div class="padding" ng-controller='MyController'>
+	<button class="button button-stable button-block" ng-click='getIndex()'>获得tabs索引</button>
+	<button class="button button-stable button-block"
+	ng-click='gotoList(1)'
+	>
+	进入 list tab 
+	</button>
+
+	<button class="button button-stable button-block"
+		ng-click='showHideTabs()'
+	>隐藏 tabs</button>
+</div> -->
+ <ion-pane ng-controller='MyController'>
+      <ion-header-bar align-title='center' class="bar-positive">
+        <div class="buttons">
+        <!-- buttons  按钮组  align-title设置title标题的位置-->
+         <!--  <button class="button button-icon ion-ios-minus-outline" ng-click='showDelete = !showDelete'></button> -->
+         <button class="button button-icon ion-ios-minus-outline" ng-click='showDeleteButtons()'></button>
+        </div>
+        <h1 class="title">{{titleList}}</h1>
+        <div class="buttons">
+            <button class="button button-icon ion-drag" ng-click='showReorder = !showReorder'></button>
+        </div>
+      </ion-header-bar>
+	<ion-content class='list-inset'>
+		<button class="button button-stable button-block" ng-click='getIndex()'>获取tab索引</button>
+		<button class="button button-stable button-block"
+		ng-click='gotoIndex(1)'
+		>进入第二页</button>
+		<button class="button button-stable button-block"
+		ng-click='showHideTabs()'
+		>隐藏显示tabs</button>
+	</ion-content>		
+
+    </ion-pane>

@@ -1,0 +1,48 @@
+<ion-side-menus enable-menu-with-back-views="false">
+<!-- 内容
+enable-menu-width-back-views="false" 打开子页面的要不要把menu当做导航
+drag-content 内容拖拽
+edge-drag-threshold 表示边界值 ，手指放在什么位置 200 true false
+ -->
+	<ion-side-menu-content 
+	drag-content="true"  edge-drag-threshold='true'>
+		 <ion-nav-bar class="bar-positive" align-title="center">
+			<ion-nav-back-button class="button-clear"></ion-nav-back-button>
+			<ion-nav-buttons side="left">
+				<button class="button icon ion-navicon button-clear"
+				menu-toggle='left'
+				></button>
+				<!-- menu-toggle 在一个指定的侧栏中切换菜单。 -->
+			</ion-nav-buttons>
+		 </ion-nav-bar>
+		 <ion-nav-view name='menuContent'></ion-nav-view>
+	</ion-side-menu-content>
+
+<!-- 侧边栏 
+side 表示 名称
+is-enabled 是否点击有效
+expose-aside-when表示什么情况下不管点不点击都显示 large 表示超过768
+-->
+	<ion-side-menu 
+	side="left"
+	width="150"
+	is-enabled = 'true'
+	expose-aside-when='large'
+	>
+		<ion-header-bar align-title="center" class="bar-positive">
+			<h2 class="title">侧边栏</h2>
+		</ion-header-bar>
+		<ion-content >
+			<ion-list>
+			<!-- menu-close 点击切换views的时候是否关闭侧边栏 -->
+				<ion-item menu-close ng-click="login()">Login</ion-item>
+				<ion-item menu-close ui-sref="app.search">Photo</ion-item>
+				<ion-item menu-close ui-sref='app.browse'>Browse</ion-item>
+				<ion-item menu-close ui-sref='app.playlists'>Playlists</ion-item>
+			</ion-list>
+		</ion-content>
+	</ion-side-menu>
+
+
+</ion-side-menus>
+

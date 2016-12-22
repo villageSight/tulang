@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app-navigation1.js"></script>
+
+  </head>
+  <body ng-app="starter"  >
+  <!--  nav-bar 设置导航 -->
+      <ion-nav-bar class="bar-positive" align-title="center">
+          <ion-nav-back-button></ion-nav-back-button>
+      </ion-nav-bar>
+      <ion-nav-view></ion-nav-view>
+
+      <script  id="templates/tabs.html" type="text/ng-template">
+          <ion-tabs class="tabs-positive tabs-icon-top">
+              <ion-tab title="首页" icon='ion-home' href='#/tab/home'>
+                  <ion-nav-view name="home-tab"></ion-nav-view>
+              </ion-tab>
+              <ion-tab title="关于我们" icon="ion-ios-information" ui-sref='tabs.about'>
+                  <ion-nav-view name="about-tab"></ion-nav-view>
+              </ion-tab>
+              <ion-tab title='联系我们' icon='ion-ios-world' ui-sref="tabs.connect">
+                  <ion-nav-view name="connect-tab"></ion-nav-view>
+              </ion-tab>
+          </ion-tabs>
+      </script>
+
+      <script id="templates/home.html" type="text/ng-template">
+        <ion-view view-title="首页">
+          <ion-content class='padding'>
+              <p>
+                <a href="#/tab/facts"  class="button icon icon-right ion-chevron-right">列表页</a>
+              </p>
+          </ion-content>
+        </ion-view>
+      </script>
+
+      <script id="templates/facts.html" type="text/ng-template">
+        <ion-view view-title="列表页">
+          <ion-content class='padding'>
+              <p>
+                  <a ui-sref="tabs.home" class="button icon ion-home">首页</a>
+                  <a ui-sref="tabs.facts2" class="button icon icon-right ion-chevron-right">详情页</a>
+              </p>
+          </ion-content>
+        </ion-view>
+      </script>
+
+
+      <script id="templates/facts2.html" type="text/ng-template">
+        <ion-view view-title="详情页">
+        <!-- side="right"  表示navBar 里面的 按钮的位置-->
+          <ion-nav-buttons side="right">
+            <button class="button icon ion-navicon">Back</button>
+          </ion-nav-buttons>
+          <ion-nav-title>详情页More</ion-nav-title>
+          <ion-content class="padding">
+             <p>
+              <!-- nav-direction  表示  滑动属性--> 
+                <a ui-sref="tabs.home" class="button icon ion-home">首页</a>
+                <a ui-sref="tabs.facts" class="button icon ion-chevron-left"
+                  nav-direction = 'swap'
+                >列表页</a>
+                <!-- 设置导航视图中过渡动画的方向，可以是forward, back, enter, exit, swap。-->
+                <button class="button button-block button-balanced" ng-click='showBackButton()'>显示/隐藏backbutton</button>
+                <button class="button button-block button-balanced" ng-click="titleAlign('left')">title对齐效果</button>
+                <button class="button button-block button-balanced" ng-click="showBar()">显示隐藏navBar</button>
+                <button class="button button-block button-balanced" ng-click="changeTitle()">设置title</button>
+             </p>
+          </ion-content>
+        </ion-view>
+      </script>
+
+
+      <script id="templates/about.html" type="text/ng-template">
+        <ion-view view-title="关于我们">
+          <ion-content class="padding">
+              <p>
+                  <a ui-sref="tabs.navstack" class="button icon icon-right ion-chevron-right">公司组织架构</a>
+              </p>
+          </ion-content>
+        </ion-view>
+      </script>
+
+
+      <script id="templates/navstack.html" type="text/ng-template">
+        <ion-view view-title="组织架构">
+          <ion-content class="padding">
+             <p>
+                 <img src="http://ionicframework.com/img/diagrams/tabs-nav-stack.png" style="width: 100%">
+             </p>
+          </ion-content>
+        </ion-view>
+      </script>
+
+
+      <script id="templates/connect.html" type="text/ng-template">
+        <ion-view view-title="联系我们">
+          <ion-content class="padding">
+              <div class="list">
+                <div class="item">微信号:123444sss</div>
+                <div class="item">手机号:13224213232</div>
+              </div>
+          </ion-content>
+        </ion-view>
+      </script>
+  </body>
+</html>

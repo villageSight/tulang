@@ -1,0 +1,97 @@
+/* Empty. Add your own CSS if you like */
+// .as .action-sheet-title{
+// 	font-size: 20px;
+// 	color:pink;
+// }
+
+// .pop .popup{
+// 	border-radius: 5px;
+// }
+
+// .slider{
+// 	height: 280px;
+// }
+
+// .slider .box{
+// 	height: 100% !important;
+// 	display: flex;
+//     align-items:center;
+// }
+
+// .slider .box h1{
+// 	width: 100%;
+// 	text-align: center;
+// 	color: #fff;
+// }
+
+// .slider .box.energized{
+// 	background: #ffc900;
+// }
+
+// .slider .box.balanced{
+// 	background: #33cd5f;
+// }
+// .slider .box.positive{
+// 	background: #387ef5;
+// }
+
+// .slider{
+// 	height: 280px;
+// }
+// .slider .box{
+// 	height: 100% !important;
+// 	display: flex;
+// 	align-items:center;
+// }
+// .slider .box h1{
+// 	width: 100%;
+// 	text-align: center;
+// 	color:#fff;
+// }
+// .slider .box.energized{
+// 	background: #ffc900;
+// }
+// .slider .box.balanced{
+// 	background: #33cd5f;
+// }
+// .slider .box.positive{
+// 	background: #387ef5;
+// }
+
+
+
+
+// ion-slides{
+// 	height: 280px;
+// }
+
+// .box{
+// 	height: 100% !important;
+// 	display: flex;
+//     align-items:center;
+// }
+
+// .box h1{
+// 	width: 100%;
+// 	text-align: center;
+// 	color: #000;
+// }
+// .box.energized{
+// 	background: #ffc900;
+// }
+
+// .box.balanced{
+// 	background: #33cd5f;
+// }
+//  .box.positive{
+// 	background: #387ef5;
+// }
+
+#showImg{
+    width: 96%;
+    margin:  0 auto;
+    height: 400px;
+    box-shadow: 0 2px 10px #ccc;
+}
+
+

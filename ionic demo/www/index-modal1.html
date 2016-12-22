@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app-modal1.js"></script>
+
+  </head>
+  <body ng-app="starter" ng-controller='modalController'>
+        <script id="modal1.html" type="text/ng-template">
+            <ion-modal-view>
+                <ion-header-bar class="bar-positive">
+                    <h2 class="title">登录</h2>
+                    <button class="button button-clear icon ion-android-cancel"
+                    ng-click='hideModal()'
+                    ></button>
+                </ion-header-bar>
+                <ion-content class="padding">
+                    <ion-list>
+                      <label for="" class="item item-input">
+                        <i class="icon ion-person placeholder-icon balanced"></i>
+                        <input type="text" placeholder="请输入用户名">
+                      </label>
+                      <label for="" class="item item-input">
+                          <i class="icon ion-locked placeholder-icon balanced"></i>
+                          <input type="password" placeholder="请输入密码">
+                      </label>
+                    </ion-list>
+                </ion-content>
+            </ion-modal-view>
+        </script>
+        <ion-pane>
+            <button class="button button-stable button-block"
+            ng-click = 'openModal($event)'
+            >打开Modal</button>
+        </ion-pane>
+  </body>
+</html>

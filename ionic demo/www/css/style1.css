@@ -1,0 +1,22 @@
+ion-slides{
+	height: 280px;
+}
+.box{
+	height: 100% !important;
+	display: flex;
+	align-items:center;
+}
+.box h1{
+	width: 100%;
+	text-align: center;
+	color:#fff;
+}
+.box.energized{
+	background: #ffc900;
+}
+.box.balanced{
+	background: #33cd5f;
+}
+.box.positive{
+	background: #387ef5;
+}

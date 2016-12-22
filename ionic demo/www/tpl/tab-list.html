@@ -1,0 +1,46 @@
+
+    <ion-pane ng-controller = 'ListController'>
+      <ion-header-bar align-title='center' class="bar-positive">
+    <div class="buttons">
+    <!-- buttons  按钮组  align-title设置title标题的位置-->
+     <!--  <button class="button button-icon ion-ios-minus-outline" ng-click='showDelete = !showDelete'></button> -->
+     <button class="button button-icon ion-ios-minus-outline" ng-click='showDeleteButtons()'></button>
+    </div>
+    <h1 class="title">{{titleList}}</h1>
+    <div class="buttons">
+        <button class="button button-icon ion-drag" ng-click='showReorder = !showReorder'></button>
+    </div>
+</ion-header-bar>
+      <!-- 手动添加滚动视图区域大小，内容区域设置宽度-->
+        <ion-content>
+            <ion-refresher
+            pulling-text='{{pullText}}'
+            pulling-icon='ion-ios-arrow-down'
+            spinner='android'
+            on-refresh = 'doRefresh()'
+            on-pulling = 'doPulling()'
+            >
+            
+            </ion-refresher>
+
+            <ion-list>
+                <ion-item ng-repeat='item in items' class='item-thumbnail-left item-remove-animate'  href='#/tab/list/{{$index}}'>
+                    <img src="http://placehold.it/100x100">
+                    <h2>{{item.title}}</h2>
+                    <p style="margin-top:10px">{{item.description}}</p>
+
+                    <ion-delete-button class='ion-minus-circled' ng-click='items.splice($index,1)'></ion-delete-button >
+                    <ion-reorder-button class='ion-navicon' on-reorder='moveItem(item,$fromIndex,$toIndex)'></ion-reorder-button>
+                    <ion-option-button class='button-positive'>分享</ion-option-button>
+                    <ion-option-button class="button-assertive">置顶</ion-option-button>
+                </ion-item>
+            </ion-list> 
+            <ion-infinite-scroll 
+                on-infinite = "loadMore()"
+                distance = '1%'
+                spinner = 'android'
+            >
+            </ion-infinite-scroll>  
+        </ion-content>
+
+    </ion-pane>

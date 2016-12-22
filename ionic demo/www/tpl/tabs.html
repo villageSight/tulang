@@ -1,0 +1,70 @@
+<ion-pane ng-controller='tabsController'>
+
+
+<ion-tabs class='tabs-icon-top tabs-positive'
+	
+	delegate-handle='tabs'
+>
+	<ion-tab 
+	title='首页'
+	icon-on='ion-ios-home'
+	icon-off='ion-ios-home-outline'
+	on-select='onTabsSelect1()'
+	href='#/tab/home'
+	>
+		<ion-nav-view name='home-tab'></ion-nav-view>
+	</ion-tab>
+	<ion-tab 
+	title='{{tabName}}' 
+	icon-on='ion-ios-list'
+	icon-off='ion-ios-list-outline'
+	badge='3'
+	badge-style='badge-assertive'
+	href='#/tab/list'
+	on-select='onTabsSelect()'
+	on-deselect = 'onTabsDeselect()'
+	>
+		<ion-nav-view name='list-tab'></ion-nav-view>
+	</ion-tab>
+	<ion-tab 
+	title='我的'
+	icon-on='ion-ios-person'
+	icon-off='ion-ios-person-outline'
+	on-select='onTabsSelect2()'
+	href='#/tab/my'
+	>
+		<ion-nav-view name='my-tab'></ion-nav-view>
+	</ion-tab>
+</ion-tabs>
+
+</ion-pane>
+
+
+<!-- 	disabled = 'true'
+	hidden='true' -->
+
+
+
+
+<!-- <ion-tabs class='tabs-icon-top tabs-positive' 
+ng-controller='tabController' delegate-handle='tabs'>
+	disabled ='true' hidden = 'true'
+	<ion-tab title='首页' icon-on='ion-ios-home' icon-off='ion-ios-home-outline' href='#/tab/home'>
+		<ion-nav-view name='home-tab'></ion-nav-view>
+	</ion-tab >
+	<ion-tab 
+	title={{tabName}} 
+	icon-on='ion-ios-list' 
+	icon-off='ion-ios-list-outline' 
+	href='#/tab/list' 
+	badge = '3'
+	badge-style ='badge-assertive'
+	on-select = 'onTabSelect()'
+	on-deselect = 'onTabDeselected()'
+	>
+		<ion-nav-view name='list-tab'></ion-nav-view>
+	</ion-tab>
+	<ion-tab title='我的' icon-on='ion-ios-person' icon-off='ion-ios-person-outline' href='#/tab/my'>
+		<ion-nav-view name='my-tab'></ion-nav-view>
+	</ion-tab>
+</ion-tabs> -->

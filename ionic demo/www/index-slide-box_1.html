@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app-slideBox_1.js"></script>
+
+  </head>
+  <body ng-app="starter" ng-controller = 'slideBoxCtrl'>
+        <ion-pane>
+          <ion-slide-box
+          does-continue='true'
+          auto-play='true'
+          slide-interval = '1500'
+          show-pager='true'
+          pager-click = 'clickAction(index)'
+          on-slide-changed = 'slideHasChanged(index)'
+          >
+             <ion-slide>
+                <div class="box energized">
+                  <h1>ENERGIZED</h1>
+                </div>
+             </ion-slide>
+             <ion-slide>
+              <div class="box balanced">
+                <h1>ENERGIZED</h1>
+              </div>
+             </ion-slide>
+             <ion-slide>
+                <div class="box positive">
+                  <h1>POSITIVE</h1>
+                </div>
+              </ion-slide>
+          </ion-slide-box>
+
+          <div class="padding">
+            <button class="button button-stable" ng-click = 'slideTo(2)'>滑到第三页</button>
+            <button class="button button-stable" ng-click='slideToPrev()'>上一页</button>
+            <button class="button button-stable" ng-click='slideToNext()'>下一页</button>
+          </div>
+
+          <div class="padding">
+            <button class="button button-stable" ng-click='stop()'>停止</button>
+            <button class="button button-stable" ng-click='start()'>启动</button>
+            <button class="button button-stable">{{index}} / {{count}}</button>
+          </div>
+        </ion-pane>
+  </body>
+</html>
